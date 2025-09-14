@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Celeste Yao Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+<!-- 顶部导航栏 -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#showreel">SHOWREEL</a></li>
+    <li><a href="#projects">PROJECTS</a></li>
+    <li><a href="#about">ABOUT</a></li>
+  </ul>
+</nav>
+
+
+ <!-- 视频开场 -->
+<section class="video-section">
+  <video id="intro-video" autoplay muted playsinline loop>
+    <source src="video/intro.mp4" type="video/mp4">
+  </video>
+
+  <!-- 叠层，用于渐变 -->
+  <div class="video-overlay"></div>
+
+  <!-- 文字层 -->
+  <div class="video-text">WELCOME!!!</div>
+</section>
+
+
+
+<section id="showreel">
+  <img id="bg-a" src="photo/bg_a.png" alt="背景图片">
+  <img id="skills-0" src="photo/skills_00000.png" alt="背景图片">
+
+  <!-- 封面图容器 -->
+  <div id="cover-container">
+    <img id="cover-img" src="photo/intro.png" alt="Showreel Cover">
+    <div id="cover-overlay">
+      <span>Click to play</span>
+    </div>
+  </div>
+
+  <!-- 弹窗容器 -->
+  <div id="video-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <video id="showreel-video" controls loop>
+        <source src="video/intro.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+
+<!-- Projects 模块 -->
+<section id="projects" class="works">
+  <h2>PROJECTS</h2>
+  <div class="grid">
+    <!-- 15 个作品占位 -->
+    <div class="work-card" data-type="video" data-src="video/cover1.mp4">
+      <img src="photo/cover/coverp1.png" alt="Work 1">
+      <div class="overlay"><span class="play-btn">▶</span>Work 1</div>
+    </div>
+
+    <div class="work-card" data-type="video" data-src="video/cover2.mp4">
+      <img src="photo/cover/coverp2.png" alt="Work 2">
+      <div class="overlay"><span class="play-btn">▶</span>Work 2</div>
+    </div>
+
+    <div class="work-card" data-type="image" data-src="photo/cover/coverp3.png">
+      <img src="photo/cover/coverp3.png" alt="Work 3">
+  <div class="overlay"><span class="play-btn">▶</span>Work 3</div>
+</div>
+
+    <div class="work-card" data-type="video" data-src="video/cover4.mp4">
+      <img src="photo/cover/coverp4.png" alt="Work 4">
+      <div class="overlay"><span class="play-btn">▶</span>Work 4</div>
+    </div>
+
+    <div class="work-card" data-type="video" data-src="video/cover5.mp4">
+      <img src="photo/cover/coverp5.png" alt="Work 5">
+      <div class="overlay"><span class="play-btn">▶</span>Work 5</div>
+    </div>
+
+    <div class="work-card" data-type="video" data-src="video/cover6.mp4">
+      <img src="photo/cover/coverp6.png" alt="Work 6">
+      <div class="overlay"><span class="play-btn">▶</span>Work 6</div>
+    </div>
+
+    <div class="work-card" data-type="video" data-src="video/cover7.mp4">
+      <img src="photo/cover/coverp7.png" alt="Work 7">
+      <div class="overlay"><span class="play-btn">▶</span>Work 7</div>
+    </div>
+
+    <div class="work-card" data-type="video" data-src="video/cover8.mp4">
+      <img src="photo/cover/coverp8.png" alt="Work 8">
+      <div class="overlay"><span class="play-btn">▶</span>Work 8</div>
+    </div>
+
+    <div class="work-card" data-type="video" data-src="video/cover9.mp4">
+      <img src="photo/cover/coverp9.png" alt="Work 9">
+      <div class="overlay"><span class="play-btn">▶</span>Work 9</div>
+    </div>
+
+<div class="work-card" data-type="image" data-src="photo/cover/coverp10.png">
+  <img src="photo/cover/coverp10.png" alt="Work 10">
+  <div class="overlay"><span class="play-btn">▶</span>Work 10</div>
+</div>
+
+<div class="work-card" data-type="image" data-src="photo/cover/coverp11.png">
+  <img src="photo/cover/coverp11.png" alt="Work 11">
+  <div class="overlay"><span class="play-btn">▶</span>Work 11</div>
+</div>
+
+<div class="work-card" data-type="image" data-src="photo/cover/coverp12v2.png">
+  <img src="photo/cover/coverp12.png" alt="Work 12">
+  <div class="overlay"><span class="play-btn">▶</span>Work 12</div>
+</div>
+
+<div class="work-card" data-type="image" data-src="photo/cover/coverp13v2.png">
+  <img src="photo/cover/coverp13.png" alt="Work 13">
+  <div class="overlay"><span class="play-btn">▶</span>Work 13
+      <small>仅负责字体设计</small>
+      </div>
+</div>
+
+<div class="work-card" data-type="image" data-src="photo\cover\coverp14v2.png">
+  <img src="photo/cover/coverp14.png" alt="Work 14">
+  <div class="overlay"><span class="play-btn">▶</span>Work 14
+      <small>仅负责字体设计</small>
+      </div>
+</div>
+</section>
+
+
+<!-- 弹窗 -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <video id="modal-video" controls></video>
+    <img id="modal-img" src="" alt="">
+  </div>
+</div>
+
+
+<section id="about">
+  <div class="about-container">
+    <h2>About Me</h2>
+    <p>邮箱：2134306807@qq.com</p>
+    <p>QQ：2134306807</p>
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Celeste Yao</p>
+</footer>
+
+
+<script src="script.js" defer></script>

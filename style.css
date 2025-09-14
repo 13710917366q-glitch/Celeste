@@ -1,0 +1,370 @@
+@font-face {
+  font-family: 'gothic'; /* 自定义字体名字，可随便取 */
+  src: url('fonts/GOTHICI.TTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* ----------------- 全局 ----------------- */
+body {
+  margin: 0;
+  font-family: 'gothic', sans-serif;
+  color: #333;
+  /* 去掉整屏滚动 */
+  scroll-snap-type: none;
+  overflow-y: scroll;
+  scroll-behavior: smooth; /* 保留平滑滚动 */
+  background-color: #ffffff;
+}
+
+section {
+  height: 100vh; /* 默认一屏高 */
+  /* 去掉 scroll-snap */
+}
+
+#projects {
+  height: auto; /* 不固定高度 */
+  min-height: 100vh; /* 保证至少一屏高 */
+  overflow: visible; /* 取消内部滚动 */
+  padding: 100px 20px; /* 给顶部导航留空间 */
+}
+
+
+
+/* ----------------- 视频开场 ----------------- */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.video-section video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+/* 视频文字层 */
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.8); /* 固定透明度 */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  z-index: 2;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'gothic', sans-serif;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+
+/* ----------------- 导航栏 ----------------- */
+.navbar {
+  position: fixed; /* 固定在顶部 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.5); /* 半透明白色 */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* 确保在内容上方 */
+}
+
+body > section {
+  padding-top: 80px; /* 给固定导航留空间 */
+}
+.navbar ul {
+  display: flex;
+  justify-content: center; /* 居中 li */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 50px; /* 文字间距，可调 */
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-family: 'gothic', sans-serif; /* 自定义字体 */
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #0077ff;
+}
+
+
+/* ----------------- 模块通用 ----------------- */
+body > section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+}
+
+/* hero, works 背景 */
+.hero {
+  background: #ffffff; /* 纯白 */
+}
+
+.works {
+  background: #f1f1f1; /* 纯白 */
+}
+
+section {
+  background: #f1f1f1; /* 其他 section 也统一白色 */
+}
+
+
+#showreel {
+  position: relative; /* 绝对定位的图片参考点 */
+  overflow: hidden;   /* 防止图片超出 */
+}
+
+#bg-a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;             
+  transition: opacity 1.5s ease, transform 0.8s ease;
+  z-index: 0; /* 最底层 */
+  transform: translateX(0);
+}
+
+#skills-0 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
+  pointer-events: none; /* 鼠标穿透，不阻挡 hover */
+}
+
+
+.modal {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.modal-content video {
+  width: 100%;
+  height: auto;
+}
+
+.close-btn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+#cover-container {
+  width: 35%;                 /* 宽度占屏幕的 35% */
+  margin: 0 200px 150px auto;  /* 上 150px, 右 50px, 下 0, 左 auto */
+  position: relative;
+}
+
+#cover-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;  /* 保持比例裁剪 */
+  opacity: 0;                  
+  transition: opacity 0.8s ease;  /* 只要渐显动画 */
+}
+
+#cover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 降低，不盖住全局文字 */
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #1f80ff;
+  font-size: 2rem;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  pointer-events: auto;
+}
+
+#cover-container:hover #cover-overlay {
+  opacity: 1;
+}
+
+#cover-container, #bg-a, #skills-0 {
+  will-change: opacity, transform;
+}
+
+
+/* 网格布局 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 三列，每列占1份 */
+  gap: 20px;
+  width: 100%;   /* 撑满屏幕 */
+  padding: 20px; /* 四周留白 */
+  box-sizing: border-box;
+}
+
+.work-card {
+  position: relative;
+  overflow: hidden; /* 保证叠层不溢出 */
+  cursor: pointer;
+}
+
+.work-card img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  transition: opacity 0.5s ease; /* 图片渐变 */
+}
+
+.work-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.6); /* 半透明白色，像 intro 的叠层 */
+  opacity: 0; /* 默认隐藏 */
+  transition: opacity 0.5s ease;
+  z-index: 2;
+  pointer-events: none; /* 鼠标事件穿透 */
+}
+
+.work-card:hover .overlay {
+  opacity: 1; /* 悬停显示 */
+}
+
+.work-card:hover img {
+  transform: none; /* 不放大 */
+}
+
+
+.work-card h3 {
+  text-align: center;
+  margin: 10px 0 0;
+  font-size: 1rem;
+}
+
+.work-card:hover img {
+  transform: none;  /* 不放大 */
+}
+
+
+.play-btn {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+/* 弹窗 */
+.modal {
+  display:none;
+  position:fixed; top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center; align-items:center;
+  z-index:100;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 1500px;
+  width: 90%;
+}
+
+.modal-content video, 
+.modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+.close-btn {
+  position:absolute; top:-20px; right:-20px;
+  font-size:2rem; color:#fff;
+  cursor:pointer;
+}
+
+#projects h2 {
+  text-align: left;   /* 左对齐 */
+  margin-left: 0px;  /* 微调左右位置 */
+  margin-right: 0px;
+  margin-top: -50px;
+  margin-bottom: 10px;
+}
+
+#about {
+  height: 500px;       /* 高度自适应内容 */
+  padding: 0px 0px; /* 上下左右内边距，可调整 */
+  background: #f1f1f1;  /* 如果你想单独背景可以换颜色 */
+}
+
+.about-container {
+  text-align: left;
+  max-width: 600px;     /* 宽度限制，阅读感更好 */
+  margin: 0;            /* 靠左 */
+  margin-left: 600px;
+  line-height: 1.6;     /* 行高，让文字不挤 */
+}
+
+.about-container h2 {
+  margin-bottom: 20px;  /* 标题和文字的距离 */
+  font-size: 2rem;      /* 大小可根据你整体比例调整 */
+}
+
+.about-container p {
+  margin: 5px 0;        /* 段落间距 */
+  font-size: 1.2rem;
+}
+
