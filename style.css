@@ -63,13 +63,13 @@ section {
   position: absolute;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #09b1ff;
   z-index: 2;
   font-size: 4rem;
   font-weight: bold;
   text-align: center;
   font-family: 'gothic', sans-serif;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+  text-shadow: none;
 }
 
 
@@ -168,6 +168,7 @@ section {
   object-fit: cover;
   z-index: 2;
   pointer-events: none; /* 鼠标穿透，不阻挡 hover */
+  transform: scale(0.15) translateX(-4800px) translateY(10px);
 }
 
 
@@ -206,7 +207,7 @@ section {
 
 #cover-container {
   width: 35%;                 /* 宽度占屏幕的 35% */
-  margin: 0 200px 150px auto;  /* 上 150px, 右 50px, 下 0, 左 auto */
+  margin: 0 200px 50px auto;  /* 上 150px, 右 50px, 下 0, 左 auto */
   position: relative;
 }
 
