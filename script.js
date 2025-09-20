@@ -58,56 +58,96 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkVisible);
   checkVisible();
 
-  // ------------------ Showreel 视频弹窗 ------------------
-  const showreelModal = document.getElementById('video-modal');
-  const showreelVideo = document.getElementById('showreel-video');
-  const showreelClose = document.querySelector('.close-btn');
+// ------------------ Showreel 视频弹窗 ------------------
+const showreelModal = document.getElementById('video-modal');
+const showreelClose = document.querySelector('.close-btn');
+const showreelContent = showreelModal.querySelector('.modal-content');
 
-  coverContainer.addEventListener('click', () => {
-    showreelModal.style.display = 'flex';
-    showreelVideo.currentTime = 0;
-    showreelVideo.play();
-  });
+coverContainer.addEventListener('click', () => {
+  showreelModal.style.display = 'flex';
 
-  const closeShowreelModal = () => {
-    showreelModal.style.display = 'none';
-    showreelVideo.pause();
-  };
+  const bvid = 'BV19KpezdExJ'; // 你要播放的 B 站视频
+  const page = 1; // 指定页码
+  let iframe = document.getElementById('showreel-bilibili-iframe');
 
-  showreelClose.addEventListener('click', closeShowreelModal);
-  showreelModal.addEventListener('click', e => { if(e.target === showreelModal) closeShowreelModal(); });
+  if(!iframe){
+    iframe = document.createElement('iframe');
+    iframe.id = 'showreel-bilibili-iframe';
+    iframe.width = '100%';
+    iframe.height = '100%';
+    iframe.frameBorder = '0';
+    iframe.allow = 'autoplay; fullscreen';
+    iframe.allowFullscreen = true;
+    showreelContent.appendChild(iframe);
+  }
+
+  iframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=${page}&autoplay=true`;
+});
+
+const closeShowreelModal = () => {
+  showreelModal.style.display = 'none';
+  const iframe = document.getElementById('showreel-bilibili-iframe');
+  if(iframe) iframe.src = ''; // 停止播放
+};
+
+showreelClose.addEventListener('click', closeShowreelModal);
+showreelModal.addEventListener('click', e => { if(e.target === showreelModal) closeShowreelModal(); });
+
+  // ------------------ 作品网格弹窗 ------------------
+document.addEventListener('DOMContentLoaded', () => {
 
   // ------------------ 作品网格弹窗 ------------------
   const modal = document.getElementById('modal');
-  const modalVideo = document.getElementById('modal-video');
-  const modalImg = document.getElementById('modal-img');
+  const modalImg = modal.querySelector('#modal-img');
   const modalClose = modal.querySelector('.close-btn');
+  const modalContent = modal.querySelector('.modal-content');
+
+  // 创建或获取 iframe 用于 B 站播放
+  let modalIframe = document.getElementById('modal-bilibili-iframe');
+  if(!modalIframe){
+    modalIframe = document.createElement('iframe');
+    modalIframe.id = 'modal-bilibili-iframe';
+    modalIframe.width = '100%';
+    modalIframe.height = '100%';
+    modalIframe.frameBorder = '0';
+    modalIframe.allow = 'autoplay; fullscreen';
+    modalIframe.allowFullscreen = true;
+    modalIframe.style.display = 'none';
+    modalContent.appendChild(modalIframe);
+  }
 
   document.querySelectorAll('.work-card').forEach(card => {
     card.addEventListener('click', () => {
       const type = card.dataset.type;
+
       if(type === 'video'){
-        modalVideo.src = card.dataset.src;
-        modalVideo.style.display = 'block';
+        // 图片隐藏
         modalImg.style.display = 'none';
-        modalVideo.currentTime = 0;
-        modalVideo.play();
-      } else {
-        modalImg.src = card.dataset.src; // <--- 用 data-src
+        // 播放 B 站 iframe
+        const bvid = card.dataset.bvid;
+        const page = card.dataset.page || 1;
+        modalIframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=${page}&autoplay=true`;
+        modalIframe.style.display = 'block';
+      } else if(type === 'image'){
+        // iframe 隐藏
+        modalIframe.src = '';
+        modalIframe.style.display = 'none';
+        // 显示图片
+        modalImg.src = card.dataset.src;
         modalImg.style.display = 'block';
-        modalVideo.style.display = 'none';
       }
+
       modal.style.display = 'flex';
     });
   });
 
+  // 点击关闭按钮或遮罩关闭弹窗
   const closeModal = () => {
+    modalIframe.src = '';
     modal.style.display = 'none';
-    modalVideo.pause();
   };
 
   modalClose.addEventListener('click', closeModal);
   modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
-
+});
 });
