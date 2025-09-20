@@ -17,21 +17,23 @@
   </ul>
 </nav>
 
-
- <!-- 视频开场 -->
+<!-- 视频开场 -->
 <section class="video-section">
   <img id="intro-image" src="photo/intro.png" alt="开场图片">
-</section>
-
-  <!-- 叠层，用于渐变 -->
   <div class="video-overlay"></div>
-
-  <!-- 文字层 -->
-  <div class="video-text">WELCOME!!!</div>
+  
+  <div class="hero">
+    <div class="hero-text">
+      <h1>Hi！这是yaelum的作品集</h1>
+      <p>下滑点击封面播放作品</p>
+    </div>
+  </div>
 </section>
 
 
 
+
+<!-- Showreel -->
 <section id="showreel">
   <img id="bg-a" src="photo/bg_a.png" alt="背景图片">
   <img id="skills-0" src="photo/skills_00000.png" alt="背景图片">
@@ -39,119 +41,198 @@
   <!-- 封面图容器 -->
   <div id="cover-container">
     <img id="cover-img" src="photo/intro.png" alt="Showreel Cover">
-    <div id="cover-overlay">
-      <span>Click to play</span>
-    </div>
+    <div id="cover-overlay"><span>Click to play</span></div>
   </div>
 
-  <!-- 弹窗容器 -->
+  <!-- Showreel 弹窗 -->
   <div id="video-modal" class="modal">
     <div class="modal-content">
       <span class="close-btn">&times;</span>
-      <video id="showreel-video" controls loop>
-        <source src="video/intro.mp4" type="video/mp4">
-      </video>
+      <!-- iframe 动态生成 -->
     </div>
   </div>
 </section>
 
-
-<!-- Projects 模块 -->
+<!-- Projects -->
 <section id="projects" class="works">
   <h2>PROJECTS</h2>
   <div class="grid">
-    <!-- 15 个作品占位 -->
-    <div class="work-card" data-type="video" data-src="video/cover1.mp4">
-      <img src="photo/cover/coverp1.png" alt="Work 1">
-      <div class="overlay"><span class="play-btn">▶</span>Work 1</div>
+    <!-- 视频作品 1-9 -->
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="1">
+  <img src="photo/cover/coverp1.png" alt="Work 1">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 1</h3>
     </div>
-
-    <div class="work-card" data-type="video" data-src="video/cover2.mp4">
-      <img src="photo/cover/coverp2.png" alt="Work 2">
-      <div class="overlay"><span class="play-btn">▶</span>Work 2</div>
-    </div>
-
-    <div class="work-card" data-type="image" data-src="photo/cover/coverp3.png">
-      <img src="photo/cover/coverp3.png" alt="Work 3">
-  <div class="overlay"><span class="play-btn">▶</span>Work 3</div>
+    <p class="work-desc">动画曲线练习</p>
+  </div>
 </div>
 
-    <div class="work-card" data-type="video" data-src="video/cover4.mp4">
-      <img src="photo/cover/coverp4.png" alt="Work 4">
-      <div class="overlay"><span class="play-btn">▶</span>Work 4</div>
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="2">
+  <img src="photo/cover/coverp2.png" alt="Work 2">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 2</h3>
     </div>
+    <p class="work-desc">粒子/动画曲线练习</p>
+  </div>
+</div>
 
-    <div class="work-card" data-type="video" data-src="video/cover5.mp4">
-      <img src="photo/cover/coverp5.png" alt="Work 5">
-      <div class="overlay"><span class="play-btn">▶</span>Work 5</div>
+<div class="work-card" data-type="image" data-src="photo/cover/coverp3.png">
+  <img src="photo/cover/coverp3.png" alt="Work 3">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 3</h3>
     </div>
+    <p class="work-desc">排版训练</p>
+  </div>
+</div>
 
-    <div class="work-card" data-type="video" data-src="video/cover6.mp4">
-      <img src="photo/cover/coverp6.png" alt="Work 6">
-      <div class="overlay"><span class="play-btn">▶</span>Work 6</div>
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="3">
+  <img src="photo/cover/coverp4.png" alt="Work 4">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 4</h3>
     </div>
+    <p class="work-desc">静止系MAD: 练习打光/固定风格化</p>
+  </div>
+</div>
 
-    <div class="work-card" data-type="video" data-src="video/cover7.mp4">
-      <img src="photo/cover/coverp7.png" alt="Work 7">
-      <div class="overlay"><span class="play-btn">▶</span>Work 7</div>
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="4">
+  <img src="photo/cover/coverp5.png" alt="Work 5">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 5</h3>
     </div>
+    <p class="work-desc">3Dstuffs融入训练</p>
+  </div>
+</div>
 
-    <div class="work-card" data-type="video" data-src="video/cover8.mp4">
-      <img src="photo/cover/coverp8.png" alt="Work 8">
-      <div class="overlay"><span class="play-btn">▶</span>Work 8</div>
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="5">
+  <img src="photo/cover/coverp6.png" alt="Work 6">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 6</h3>
     </div>
+    <p class="work-desc">3Dstuffs融入训练 for 2</p>
+  </div>
+</div>
 
-    <div class="work-card" data-type="video" data-src="video/cover9.mp4">
-      <img src="photo/cover/coverp9.png" alt="Work 9">
-      <div class="overlay"><span class="play-btn">▶</span>Work 9</div>
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="6">
+  <img src="photo/cover/coverp7.png" alt="Work 7">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 7</h3>
     </div>
+    <p class="work-desc">动画曲线练习</p>
+  </div>
+</div>
+
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="7">
+  <img src="photo/cover/coverp8.png" alt="Work 8">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 8</h3>
+    </div>
+    <p class="work-desc">上海音乐番only展4.0PV</p>
+  </div>
+</div>
+
+<div class="work-card" data-type="video" data-bvid="BV19KpezdExJ" data-page="8">
+  <img src="photo/cover/coverp9.png" alt="Work 9">
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 9</h3>
+    </div>
+    <p class="work-desc">分镜练习</p>
+  </div>
+</div>
 
 <div class="work-card" data-type="image" data-src="photo/cover/coverp10.png">
   <img src="photo/cover/coverp10.png" alt="Work 10">
-  <div class="overlay"><span class="play-btn">▶</span>Work 10</div>
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 10</h3>
+    </div>
+    <p class="work-desc">三维场景制作</p>
+  </div>
 </div>
 
 <div class="work-card" data-type="image" data-src="photo/cover/coverp11.png">
   <img src="photo/cover/coverp11.png" alt="Work 11">
-  <div class="overlay"><span class="play-btn">▶</span>Work 11</div>
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 11</h3>
+    </div>
+    <p class="work-desc">排版练习 for 2</p>
+  </div>
 </div>
 
 <div class="work-card" data-type="image" data-src="photo/cover/coverp12v2.png">
   <img src="photo/cover/coverp12.png" alt="Work 12">
-  <div class="overlay"><span class="play-btn">▶</span>Work 12</div>
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 12</h3>
+    </div>
+    <p class="work-desc">静止系漫画素材打光</p>
+  </div>
 </div>
 
 <div class="work-card" data-type="image" data-src="photo/cover/coverp13v2.png">
   <img src="photo/cover/coverp13.png" alt="Work 13">
-  <div class="overlay"><span class="play-btn">▶</span>Work 13
-      <small>仅负责字体设计</small>
-      </div>
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 13</h3>
+    </div>
+    <p class="work-desc">字体设计/仅负责字体设计</p>
+  </div>
 </div>
 
-<div class="work-card" data-type="image" data-src="photo\cover\coverp14v2.png">
+<div class="work-card" data-type="image" data-src="photo/cover/coverp14v2.png">
   <img src="photo/cover/coverp14.png" alt="Work 14">
-  <div class="overlay"><span class="play-btn">▶</span>Work 14
-      <small>仅负责字体设计</small>
-      </div>
+  <div class="overlay">
+    <div class="overlay-top">
+      <span class="play-btn">▶</span>
+      <h3>Work 14</h3>
+    </div>
+    <p class="work-desc">字体设计/仅负责字体设计 for 2</p>
+  </div>
 </div>
-</section>
 
+</section>
 
 <!-- 弹窗 -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close-btn">&times;</span>
-    <video id="modal-video" controls></video>
     <img id="modal-img" src="" alt="">
+    <!-- iframe 动态生成 -->
   </div>
 </div>
 
-
 <section id="about">
   <div class="about-container">
-    <h2>About Me</h2>
-    <p>邮箱：2134306807@qq.com</p>
-    <p>QQ：2134306807</p>
+    <img src="photo/avatar.jpg" alt="头像" class="about-avatar">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p class="small-text">邮箱：2134306807@qq.com</p>
+      <p class="small-text">QQ：2134306807</p>
+      <p class="small-text">擅长AE，blender，喜欢视频设计</p>
+      <p class="small-text">同时有字体设计经验，并能进行平面分镜创作</p>
+    </div>
   </div>
 </section>
 
@@ -161,5 +242,112 @@
   <p>© 2025 Celeste Yao</p>
 </footer>
 
+<script>
+document.addEventListener('DOMContentLoaded', () => {
 
-<script src="script.js" defer></script>
+  // 导航平滑滚动
+  document.querySelectorAll('.navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  // 禁止拖拽
+  document.querySelectorAll('img, video').forEach(el => el.addEventListener('dragstart', e => e.preventDefault()));
+
+  // Showreel 动画（简单示例）
+  const showreel = document.getElementById('showreel');
+  const bgA = document.getElementById('bg-a');
+  const coverContainer = document.getElementById('cover-container');
+  const coverImg = document.getElementById('cover-img');
+
+  let bgShown = false, coverShown = false;
+  const checkVisible = () => {
+    const rect = showreel.getBoundingClientRect();
+    if(rect.top < window.innerHeight*0.35 && !bgShown){ bgA.style.opacity=1; bgShown=true; }
+    if(rect.top < window.innerHeight*0.65 && !coverShown){ coverImg.style.opacity=1; coverShown=true; }
+  };
+  window.addEventListener('scroll', checkVisible);
+  checkVisible();
+
+  // Showreel 弹窗
+  const showreelModal = document.getElementById('video-modal');
+  const showreelClose = showreelModal.querySelector('.close-btn');
+  const showreelContent = showreelModal.querySelector('.modal-content');
+
+  coverContainer.addEventListener('click', () => {
+    showreelModal.style.display = 'flex';
+    let iframe = document.getElementById('showreel-bilibili-iframe');
+    if(!iframe){
+      iframe = document.createElement('iframe');
+      iframe.id='showreel-bilibili-iframe';
+      iframe.width='100%'; iframe.height='100%';
+      iframe.frameBorder='0';
+      iframe.allow='autoplay; fullscreen';
+      iframe.allowFullscreen=true;
+      showreelContent.appendChild(iframe);
+    }
+    iframe.src = `https://player.bilibili.com/player.html?bvid=BV19KpezdExJ&page=3&autoplay=true`;
+  });
+
+  const closeShowreelModal = () => {
+    showreelModal.style.display='none';
+    const iframe = document.getElementById('showreel-bilibili-iframe');
+    if(iframe) iframe.src='';
+  };
+
+  showreelClose.addEventListener('click', closeShowreelModal);
+  showreelModal.addEventListener('click', e => { if(e.target === showreelModal) closeShowreelModal(); });
+
+  // Projects 弹窗
+  const modal = document.getElementById('modal');
+  const modalClose = modal.querySelector('.close-btn');
+  const modalContent = modal.querySelector('.modal-content');
+  let modalIframe = null;
+  const modalImg = document.getElementById('modal-img');
+
+  document.querySelectorAll('.work-card').forEach(card => {
+    card.addEventListener('click', () => {
+      const type = card.dataset.type;
+
+      if(type==='video'){
+        modalImg.style.display='none';
+        if(!modalIframe){
+          modalIframe = document.createElement('iframe');
+          modalIframe.width='100%';
+          modalIframe.height='100%';
+          modalIframe.frameBorder='0';
+          modalIframe.allow='autoplay; fullscreen';
+          modalIframe.allowFullscreen=true;
+          modalContent.appendChild(modalIframe);
+        }
+        const bvid = card.dataset.bvid;
+        const page = card.dataset.page || 1;
+        modalIframe.src = `https://player.bilibili.com/player.html?bvid=${bvid}&page=${page}&autoplay=true`;
+        modalIframe.style.display='block';
+      } else {
+        if(modalIframe) modalIframe.style.display='none';
+        modalImg.src = card.dataset.src;
+        modalImg.style.display='block';
+      }
+
+      modal.style.display='flex';
+    });
+  });
+
+  // 关闭 Projects 弹窗
+  const closeModal = () => {
+    if(modalIframe) modalIframe.src='';
+    modal.style.display='none';
+  };
+
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if(e.target===modal) closeModal(); });
+
+});
+</script>
+
+</body>
+</html>
